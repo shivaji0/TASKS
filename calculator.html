@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator made by shivaji</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+		}
+		input[type="button"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			margin: 5px;
+			font-size: 20px;
+			cursor: pointer;
+			width: 50px;
+		}
+		input[type="text"] {
+			padding: 10px;
+			font-size: 20px;
+			border-radius: 5px;
+			border: none;
+			margin: 5px;
+			width: 100%;
+		}
+		#calculator {
+			margin: 0 auto;
+			width: 200px;
+			border: 1px solid #CCC;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="calculator">
+		<input type="text" id="result" readonly>
+		<input type="button" value="1" onclick="addToExpression('1')">
+		<input type="button" value="2" onclick="addToExpression('2')">
+		<input type="button" value="3" onclick="addToExpression('3')">
+		<input type="button" value="+" onclick="addToExpression('+')">
+		<input type="button" value="4" onclick="addToExpression('4')">
+		<input type="button" value="5" onclick="addToExpression('5')">
+		<input type="button" value="6" onclick="addToExpression('6')">
+		<input type="button" value="-" onclick="addToExpression('-')">
+		<input type="button" value="7" onclick="addToExpression('7')">
+		<input type="button" value="8" onclick="addToExpression('8')">
+		<input type="button" value="9" onclick="addToExpression('9')">
+		<input type="button" value="*" onclick="addToExpression('*')">
+		<input type="button" value="C" onclick="clearExpression()">
+		<input type="button" value="0" onclick="addToExpression('0')">
+		<input type="button" value="=" onclick="calculate()">
+		<input type="button" value="/" onclick="addToExpression('/')">
+	</div>
+	<script type="text/javascript">
+		let expression = '';
+		function addToExpression(val) {
+			expression += val;
+			document.getElementById('result').value = expression;
+		}
+		function clearExpression() {
+			expression = '';
+			document.getElementById('result').value = expression;
+		}
+		function calculate() {
+			try {
+				let result = eval(expression);
+				expression = result;
+				document.getElementById('result').value = result;
+			} catch (e) {
+				alert('Invalid Expression');
+			}
+		}
+	</script>
+</body>
+</html>

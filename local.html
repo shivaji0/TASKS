@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <HEAD>
+        <title>
+
+        </title>
+<STYLE>
+    *{
+        padding: 0%;
+        margin: 0%;
+    }
+    body{
+        background-color: black;
+        color: aliceblue;
+        display: flex;
+        
+        justify-content: center;
+    }
+</STYLE>
+    </HEAD>
+<body>
+
+
+<h2>FILTER Arrays</h2>
+<br>
+
+
+<p id="filter"></p>
+
+<script>
+    
+
+const ages = [32, 33, 16,"shiva",99,09,55, 40];
+
+document.getElementById("filter").innerHTML = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+</script>
+
+</body>
+</html>
